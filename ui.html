@@ -1,0 +1,35 @@
+<style>
+  .text-center {
+    text-align: center;
+  }
+
+  .text-xl {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .flex-around-center {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+</style>
+<h2 class="text-center text-xl">Export Tailwind Config</h2>
+<div class="flex-around-center">
+  <button id="cancel" class="text-xl">Cancel</button>
+  <button id="tailwind" class="text-xl">Export</button>
+</div>
+<script>
+  document.getElementById("cancel").onclick = () => {
+    parent.postMessage({ pluginMessage: { type: "cancel" } }, "*");
+  };
+
+  document.getElementById("tailwind").onclick = () => {
+    parent.postMessage({ pluginMessage: { type: "export-tailwind" } }, "*");
+  };
+
+  onmessage = (event) => {
+    console.log("got this from the plugin code", event?.data?.pluginMessage);
+  };
+</script>
