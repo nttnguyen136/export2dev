@@ -1,0 +1,8 @@
+{
+  "name": "Figma2Dev",
+  "id": "",
+  "api": "0.0.1",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html",
+  "editorType": ["figma", "figjam"]
+}
